@@ -13,12 +13,14 @@ with gui.window(label="Movie vs. Games", width=1000, height=1000):
             line_data = line.split(":")
             game_money = float(line_data[2])
             movie_money = float(line_data[1])
-            bar_width = game_money*50
+            bar_width = game_money*10
             if movie_money > game_money:
                 bar_color = comp151Colors.DARK_PURPLE
             else:
                 bar_color = comp151Colors.RED
-
+            gui.draw_rectangle((0,next_bar_start), (bar_width, next_bar_start+BAR_HEIGHT),
+                               fill=bar_color)
+            next_bar_start += BAR_HEIGHT+30
 
 
 
